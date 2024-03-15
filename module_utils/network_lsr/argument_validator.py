@@ -682,9 +682,7 @@ class ArgValidatorIPRoute(ArgValidatorDict):
                 ArgValidatorIP(
                     "src", family=family, default_value=None, plain_address=False
                 ),
-                ArgValidatorNum(
-                    "scope", default_value=None, val_min=0, val_max=UINT32_MAX
-                ),
+                ArgValidatorNum("scope", default_value=None, val_min=0, val_max=255),
                 ArgValidatorRouteTable("table"),
             ],
             default_value=None,
