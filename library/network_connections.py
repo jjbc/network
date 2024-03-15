@@ -1259,6 +1259,14 @@ class NMUtil:
                     NM.IPRoute.set_attribute(
                         new_route, "type", Util.GLib().Variant("s", r["type"])
                     )
+                if r["scope"]:
+                    NM.IPRoute.set_attribute(
+                        new_route, "scope", Util.GLib().Variant.new_byte(r["scope"])
+                    )
+                if r["src"]:
+                    NM.IPRoute.set_attribute(
+                        new_route, "src", Util.GLib().Variant.new_string(r["src"])
+                    )
                 if r["table"]:
                     NM.IPRoute.set_attribute(
                         new_route, "table", Util.GLib().Variant.new_uint32(r["table"])
